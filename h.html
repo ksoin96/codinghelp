@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Script Execution</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+</head>
+<body>
+  <div>
+    <button onclick="runPythonScript()">Run</button>
+  </div>
+  <div>
+    <pre id="output"></pre>
+  </div>
+
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  <script>
+    async function runPythonScript() {
+      const script = `
+print("Hello World")
+`;
+
+      const output = await pyscript.run(script);
+      document.getElementById('output').innerText = output;
+    }
+  </script>
+</body>
+</html>
